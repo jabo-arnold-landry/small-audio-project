@@ -5,25 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
+    <script src="javascript/index.js" type="module"></script>
   </head>
   <body>
     <section class="player">
-      <img src="" alt="mp3 image icon" />
-      <div class="audio">
-        <audio src=""></audio>
-      </div>
+      <div class="audio"></div>
       <div class="controller">
-        <button>previous</button>
-        <button>play</button>
-        <button>next</button>
-        <button title="toggle playlist">playlist</button>
+        <img src="" alt="mp3 image icon" /> <br />
+        <div class="info">
+          <input
+            type="range"
+            id="progress"
+            min="0"
+            max="0"
+            step="2.5"
+            disabled
+            title="progress bar"
+          />
+        </div>
+        <div>
+          <button class="contorll" id="prev" title="previous">⏮</button>
+          <button class="contorll" id="play" title="play">▶</button>
+          <button
+            class="contorll"
+            id="nxt"
+            title="next
+          "
+          >
+            ⏭
+          </button>
+          <button class="" id="toggle" title="toggle playlist">playlist</button>
+        </div>
       </div>
-      <div class="playlist">
-        <p>list is empty</p>
+      <div class="playlist drag-zone" draggable="true" title="song-section">
+        <div class="options-list hidden">
+          <span>remove</span>
+          <span>sort</span>
+        </div>
+        <p>drag and drop a file</p>
         <ul class="song-display"></ul>
-        <input type="file" id="songs" multiple /><br />
-        <button>+</button>
+
+        <div class="input-file">
+          <label for="songs" title="select a song"
+            >choose from local directory</label
+          ><br />
+          <input type="file" title="" id="songs" multiple accept="audio/*" />
+        </div>
+        <!-- <p ></p>drag and drop media here!</p> -->
       </div>
     </section>
   </body>
